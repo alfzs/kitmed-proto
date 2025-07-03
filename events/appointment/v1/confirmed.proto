@@ -5,7 +5,8 @@ package kitmed.events.appointment.v1;
 option go_package = "github.com/alfzs/kitmed-proto/events/appointment/v1;eventsappointmentv1";
 
 message Confirmed {
-  string appointment_mis_id = 1;
-  string patient_mis_id = 2;
-  string clinic_mis_id = 3;
+  string tenant_id = 1;           // UUID арендатора/тенанта в строковом формате
+  string appointment_mis_id = 2;  // ID записи в МИС
+  string patient_mis_id = 3;      // ID пациента в МИС
+  string clinic_mis_id = 4;       // ID клиники в МИС
 }
