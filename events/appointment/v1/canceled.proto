@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package kitmed.events.appointment.v1;
+
+option go_package = "github.com/alfzs/kitmed-proto/events/appointment/v1;eventsappointmentv1";
+
+message CancelAppointmentParams {
+  string appointment_mis_id = 1;
+  string clinic_mis_id = 2;
+}

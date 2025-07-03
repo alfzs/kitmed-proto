@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package kitmed.events.appointment.v1;
+
+option go_package = "github.com/alfzs/kitmed-proto/events/appointment/v1;eventsappointmentv1";
+
+message Confirmed {
+  string appointment_mis_id = 1;
+  string patient_mis_id = 2;
+  string clinic_mis_id = 3;
+}
