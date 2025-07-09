@@ -4,8 +4,10 @@ package kitmed.events.appointment.v1;
 
 option go_package = "github.com/alfzs/kitmed-proto/events/appointment/v1;eventsappointmentv1";
 
+import "google/protobuf/wrappers.proto";
+
 message Canceled {
-  string tenant_id = 1;           // UUID арендатора/тенанта в строковом формате
-  string appointment_mis_id = 2;  // ID записи в МИС
-  string clinic_mis_id = 3;       // ID клиники в МИС
+  google.protobuf.StringValue tenant_id = 1;
+  google.protobuf.StringValue appointment_mis_id = 2;
+  google.protobuf.StringValue clinic_mis_id = 3;
 }

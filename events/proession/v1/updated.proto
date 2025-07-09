@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package mis.events.profession.v1;
+
+option go_package = "github.com/alfzs/kitmed-proto/events/appointment/v1;eventsprofessionv1";
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/wrappers.proto";
+
+message Profession {
+  google.protobuf.StringValue id = 1;
+  google.protobuf.StringValue tenant_id = 2;
+  google.protobuf.StringValue mis_id = 3;
+  google.protobuf.StringValue name = 4;
+  google.protobuf.Timestamp created_at = 5;
+  google.protobuf.Timestamp updated_at = 6;
+}
