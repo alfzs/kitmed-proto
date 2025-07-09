@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package mis.events.patient.v1;
 
-option go_package = "github.com/alfzs/kitmed-proto/events/appointment/v1;eventspatientv1";
+option go_package = "github.com/alfzs/kitmed-proto/events/patient/v1;eventspatientv1";
 
 import "google/protobuf/timestamp.proto";
 import "google/protobuf/wrappers.proto";

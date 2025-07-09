@@ -2,12 +2,11 @@ syntax = "proto3";
 
 package mis.events.clinic.v1;
 
-option go_package = "github.com/alfzs/kitmed-proto/events/appointment/v1;eventsclinicv1";
+option go_package = "github.com/alfzs/kitmed-proto/events/clinic/v1;eventsclinicv1";
 
 import "google/protobuf/timestamp.proto";
 import "google/protobuf/wrappers.proto";
 
-// Clinic представляет запись на приём.
 message CLinic {
   google.protobuf.StringValue id = 1;
   google.protobuf.StringValue tenant_id = 2;
