@@ -32,3 +32,8 @@ enum Gender {
   GENDER_MALE = 1;
   GENDER_FEMALE = 2;
 }
+
+// Обёртка для Kafka-сообщения.
+message PatientList {
+  repeated Patient items = 1;
+}

@@ -7,7 +7,7 @@ option go_package = "github.com/alfzs/kitmed-proto/events/clinic/v1;eventsclinic
 import "google/protobuf/timestamp.proto";
 import "google/protobuf/wrappers.proto";
 
-message CLinic {
+message Clinic {
   google.protobuf.StringValue id = 1;
   google.protobuf.StringValue tenant_id = 2;
   google.protobuf.StringValue mis_id = 3;
@@ -19,4 +19,9 @@ message CLinic {
   bool is_active = 9;
   google.protobuf.Timestamp created_at = 10;
   google.protobuf.Timestamp updated_at = 11;
+}
+
+// Обёртка для Kafka-сообщения.
+message ClinicList {
+  repeated Clinic items = 1;
 }

@@ -15,3 +15,8 @@ message Profession {
   google.protobuf.Timestamp created_at = 5;
   google.protobuf.Timestamp updated_at = 6;
 }
+
+// Обёртка для Kafka-сообщения.
+message ProfessionList {
+  repeated Profession items = 1;
+}

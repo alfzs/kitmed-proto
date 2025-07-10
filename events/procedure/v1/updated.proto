@@ -18,3 +18,8 @@ message Procedure {
   google.protobuf.Timestamp created_at = 8;
   google.protobuf.Timestamp updated_at = 9;
 }
+
+// Обёртка для Kafka-сообщения.
+message ProcedureList {
+  repeated Procedure items = 1;
+}
