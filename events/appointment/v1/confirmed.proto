@@ -6,7 +6,7 @@ option go_package = "github.com/alfzs/kitmed-proto/events/appointment/v1;eventsa
 
 import "google/protobuf/wrappers.proto";
 
-message Confirmed {
+message AppointmentConfirmed {
   google.protobuf.StringValue tenant_id = 1;
   google.protobuf.StringValue appointment_mis_id = 2;
   google.protobuf.StringValue patient_mis_id = 3;

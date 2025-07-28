@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package mis.models.patient.v1;
+
+option go_package = "github.com/alfzs/kitmed-proto/models/patient/v1;modelspatientv1";
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/wrappers.proto";
+
+message MisPatient {
+  google.protobuf.StringValue id = 1;
+  google.protobuf.StringValue tenant_id = 2;
+  google.protobuf.StringValue mis_id = 3;
+  google.protobuf.StringValue first_name = 4;
+  google.protobuf.StringValue middle_name = 5;
+  google.protobuf.StringValue last_name = 6;
+  google.protobuf.StringValue phone = 7;
+  google.protobuf.StringValue email = 8;
+  MisGender gender = 9;
+  google.protobuf.Timestamp birth_date = 10;
+  bool refuse_call = 11;
+  bool refuse_sms = 12;
+  bool refuse_email = 13;
+  bool refuse_messengers = 14;
+  google.protobuf.Timestamp created_at = 15;
+  google.protobuf.Timestamp updated_at = 16;
+}
+
+// Перечисление пола.
+enum MisGender {
+  GENDER_UNSPECIFIED = 0;
+  GENDER_MALE = 1;
+  GENDER_FEMALE = 2;
+}

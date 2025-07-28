@@ -4,54 +4,9 @@ package mis.events.appointment.v1;
 
 option go_package = "github.com/alfzs/kitmed-proto/events/appointment/v1;eventsappointmentv1";
 
-import "google/protobuf/timestamp.proto";
-import "google/protobuf/duration.proto";
-import "google/protobuf/wrappers.proto";
+import "models/appointment/v1/mis_appointment.proto";
 
-// Appointment представляет запись на приём.
-message Appointment {
-  google.protobuf.StringValue id = 1;
-  google.protobuf.StringValue tenant_id = 2;
-  google.protobuf.StringValue mis_id = 3;
-  google.protobuf.StringValue clinic_mis_id = 4;
-  google.protobuf.StringValue doctor_mis_id = 5;
-  google.protobuf.StringValue patient_mis_id = 6;
-  google.protobuf.Timestamp scheduled_time = 7;
-  google.protobuf.Duration duration = 8;
-  Status status = 9;
-  Mode mode = 10;
-  google.protobuf.StringValue source = 11;
-  bool is_first = 12;
-  repeated Procedure procedures = 13;
-  google.protobuf.Timestamp created_at = 14;
-  google.protobuf.Timestamp updated_at = 15;
-}
-
-// Procedure представляет процедуру, связанную с записью.
-message Procedure {
-  string mis_id = 1;
-  int32 count = 2;
-}
-
-// Статус записи.
-enum Status {
-  STATUS_UNSPECIFIED = 0;
-  STATUS_SCHEDULED = 1;
-  STATUS_CONFIRMED = 2;
-  STATUS_COMPLETED = 3;
-  STATUS_CANCELLED = 4;
-  STATUS_RESCHEDULED = 5;
-}
-
-// Способ приёма.
-enum Mode {
-  MODE_UNSPECIFIED = 0;
-  MODE_ONLINE = 1;
-  MODE_CLINIC = 2;
-  MODE_OUTSIDE = 3;
-}
-
-// Обёртка для Kafka-сообщения.
-message AppointmentList {
-  repeated Appointment items = 1;
+// Событие обновления записи.
+message AppointmentUpdated {
+  repeated mis.models.appointment.v1.MisAppointment items = 1;
 }

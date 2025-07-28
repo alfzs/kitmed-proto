@@ -2,24 +2,11 @@ syntax = "proto3";
 
 package mis.events.procedure.v1;
 
-option go_package = "github.com/alfzs/kitmed-proto/events/procedure/v1;eventsprrcedurev1";
+option go_package = "github.com/alfzs/kitmed-proto/events/procedure/v1;eventsprocedurev1";
 
-import "google/protobuf/timestamp.proto";
-import "google/protobuf/wrappers.proto";
+import "models/procedure/v1/mis_procedure.proto";
 
-message Procedure {
-  google.protobuf.StringValue id = 1;
-  google.protobuf.StringValue tenant_id = 2;
-  google.protobuf.StringValue mis_id = 3;
-  google.protobuf.StringValue code = 4;
-  google.protobuf.StringValue name = 5;
-  google.protobuf.StringValue price = 6;
-  google.protobuf.StringValue profession_mis_id = 7;
-  google.protobuf.Timestamp created_at = 8;
-  google.protobuf.Timestamp updated_at = 9;
-}
-
-// Обёртка для Kafka-сообщения.
-message ProcedureList {
-  repeated Procedure items = 1;
+// Событие обновления процедуры.
+message ProcedureUpdated {
+  repeated mis.models.procedure.v1.MisProcedure items = 1;
 }

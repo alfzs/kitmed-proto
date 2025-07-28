@@ -4,36 +4,9 @@ package mis.events.patient.v1;
 
 option go_package = "github.com/alfzs/kitmed-proto/events/patient/v1;eventspatientv1";
 
-import "google/protobuf/timestamp.proto";
-import "google/protobuf/wrappers.proto";
+import "models/patient/v1/mis_patient.proto";
 
-message Patient {
-  google.protobuf.StringValue id = 1;
-  google.protobuf.StringValue tenant_id = 2;
-  google.protobuf.StringValue mis_id = 3;
-  google.protobuf.StringValue first_name = 4;
-  google.protobuf.StringValue middle_name = 5;
-  google.protobuf.StringValue last_name = 6;
-  google.protobuf.StringValue phone = 7;
-  google.protobuf.StringValue email = 8;
-  Gender gender = 9;
-  google.protobuf.Timestamp birth_date = 10;
-  bool refuse_call = 11;
-  bool refuse_sms = 12;
-  bool refuse_email = 13;
-  bool refuse_messengers = 14;
-  google.protobuf.Timestamp created_at = 15;
-  google.protobuf.Timestamp updated_at = 16;
-}
-
-// Перечисление пола.
-enum Gender {
-  GENDER_UNSPECIFIED = 0;
-  GENDER_MALE = 1;
-  GENDER_FEMALE = 2;
-}
-
-// Обёртка для Kafka-сообщения.
-message PatientList {
-  repeated Patient items = 1;
+// Событие обновления пациента.
+message PatientUpdated {
+  repeated mis.models.patient.v1.MisPatient items = 1;
 }

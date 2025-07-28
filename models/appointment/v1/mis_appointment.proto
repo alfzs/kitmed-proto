@@ -1,0 +1,52 @@
+syntax = "proto3";
+
+package mis.models.appointment.v1;
+
+option go_package = "github.com/alfzs/kitmed-proto/models/appointment/v1;modelsappointmentv1";
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/duration.proto";
+import "google/protobuf/wrappers.proto";
+
+// Структура записи из МИС
+message MisAppointment {
+  google.protobuf.StringValue id = 1;
+  google.protobuf.StringValue tenant_id = 2;
+  google.protobuf.StringValue mis_id = 3;
+  google.protobuf.StringValue clinic_mis_id = 4;
+  google.protobuf.StringValue doctor_mis_id = 5;
+  google.protobuf.StringValue patient_mis_id = 6;
+  google.protobuf.Timestamp scheduled_time = 7;
+  google.protobuf.Duration duration = 8;
+  MisAppointmentStatus status = 9;
+  MisAppointmentMode mode = 10;
+  google.protobuf.StringValue source = 11;
+  bool is_first = 12;
+  repeated MisProcedure procedures = 13;
+  google.protobuf.Timestamp created_at = 14;
+  google.protobuf.Timestamp updated_at = 15;
+}
+
+// Procedure представляет процедуру, связанную с записью.
+message MisProcedure {
+  string mis_id = 1;
+  int32 count = 2;
+}
+
+// Статус записи.
+enum MisAppointmentStatus {
+  MIS_APPOINTMENT_STATUS_UNSPECIFIED = 0;
+  MIS_APPOINTMENT_STATUS_SCHEDULED = 1;
+  MIS_APPOINTMENT_STATUS_CONFIRMED = 2;
+  MIS_APPOINTMENT_STATUS_COMPLETED = 3;
+  MIS_APPOINTMENT_STATUS_CANCELLED = 4;
+  MIS_APPOINTMENT_STATUS_RESCHEDULED = 5;
+}
+
+// Способ приёма.
+enum MisAppointmentMode {
+  MIS_APPOINTMENT_MODE_UNSPECIFIED = 0;
+  MIS_APPOINTMENT_MODE_ONLINE = 1;
+  MIS_APPOINTMENT_MODE_CLINIC = 2;
+  MIS_APPOINTMENT_MODE_OUTSIDE = 3;
+}

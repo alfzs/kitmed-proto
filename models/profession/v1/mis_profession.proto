@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package mis.models.profession.v1;
+
+option go_package = "github.com/alfzs/kitmed-proto/models/profession/v1;modelsprofessionv1";
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/wrappers.proto";
+
+message MisProfession {
+  google.protobuf.StringValue id = 1;
+  google.protobuf.StringValue tenant_id = 2;
+  google.protobuf.StringValue mis_id = 3;
+  google.protobuf.StringValue name = 4;
+  google.protobuf.Timestamp created_at = 5;
+  google.protobuf.Timestamp updated_at = 6;
+}

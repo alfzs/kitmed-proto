@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package mis.models.clinic.v1;
+
+option go_package = "github.com/alfzs/kitmed-proto/models/clinic/v1;modelsclinicv1";
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/wrappers.proto";
+
+// Структура клиники из МИС
+message MisClinic {
+  google.protobuf.StringValue id = 1;
+  google.protobuf.StringValue tenant_id = 2;
+  google.protobuf.StringValue mis_id = 3;
+  google.protobuf.StringValue name = 4;
+  google.protobuf.StringValue address = 5;
+  google.protobuf.StringValue phone = 6;
+  google.protobuf.StringValue latitude = 7;
+  google.protobuf.StringValue longitude = 8;
+  bool is_active = 9;
+  google.protobuf.Timestamp created_at = 10;
+  google.protobuf.Timestamp updated_at = 11;
+}

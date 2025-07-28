@@ -4,24 +4,9 @@ package mis.events.clinic.v1;
 
 option go_package = "github.com/alfzs/kitmed-proto/events/clinic/v1;eventsclinicv1";
 
-import "google/protobuf/timestamp.proto";
-import "google/protobuf/wrappers.proto";
+import "models/clinic/v1/mis_clinic.proto";
 
-message Clinic {
-  google.protobuf.StringValue id = 1;
-  google.protobuf.StringValue tenant_id = 2;
-  google.protobuf.StringValue mis_id = 3;
-  google.protobuf.StringValue name = 4;
-  google.protobuf.StringValue address = 5;
-  google.protobuf.StringValue phone = 6;
-  google.protobuf.StringValue latitude = 7;
-  google.protobuf.StringValue longitude = 8;
-  bool is_active = 9;
-  google.protobuf.Timestamp created_at = 10;
-  google.protobuf.Timestamp updated_at = 11;
-}
-
-// Обёртка для Kafka-сообщения.
-message ClinicList {
-  repeated Clinic items = 1;
+// Событие обновления клиники.
+message ClinicUpdated {
+  repeated mis.models.clinic.v1.MisClinic items = 1;
 }
