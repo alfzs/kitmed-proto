@@ -4,9 +4,23 @@ package mis.events.doctor.v1;
 
 option go_package = "github.com/alfzs/kitmed-proto/events/doctor/v1;eventsdoctorv1";
 
-import "models/doctor/v1/mis_doctor.proto";
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/wrappers.proto";
 
 // Событие обновления доктора.
 message DoctorUpdated {
-  repeated mis.models.doctor.v1.MisDoctor items = 1;
+  repeated Doctor items = 1;
+}
+
+// Структура доктора из МИС
+message Doctor {
+  google.protobuf.StringValue id = 1;
+  google.protobuf.StringValue tenant_id = 2;
+  google.protobuf.StringValue mis_id = 3;
+  google.protobuf.StringValue first_name = 4;
+  google.protobuf.StringValue middle_name = 5;
+  google.protobuf.StringValue last_name = 6;
+  google.protobuf.StringValue profession_mis_id = 7;
+  google.protobuf.Timestamp created_at = 8;
+  google.protobuf.Timestamp updated_at = 9;
 }
