@@ -23,10 +23,10 @@ message Patient {
   google.protobuf.StringValue email = 8;
   Gender gender = 9;
   google.protobuf.Timestamp birth_date = 10;
-  bool refuse_call = 11;
-  bool refuse_sms = 12;
-  bool refuse_email = 13;
-  bool refuse_messengers = 14;
+  google.protobuf.BoolValue refuse_call = 11;
+  google.protobuf.BoolValue refuse_sms = 12;
+  google.protobuf.BoolValue refuse_email = 13;
+  google.protobuf.BoolValue refuse_messengers = 14;
   google.protobuf.Timestamp created_at = 15;
   google.protobuf.Timestamp updated_at = 16;
 }
