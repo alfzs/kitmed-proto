@@ -8,7 +8,7 @@ import "google/protobuf/timestamp.proto";
 import "google/protobuf/duration.proto";
 import "google/protobuf/wrappers.proto";
 
-// Событие обновления записи.
+// Событие обновления записи
 message AppointmentUpdated {
   repeated Appointment items = 1;
 }
