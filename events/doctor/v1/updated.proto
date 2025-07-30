@@ -4,7 +4,6 @@ package mis.events.doctor.v1;
 
 option go_package = "github.com/alfzs/kitmed-proto/events/doctor/v1;eventsdoctorv1";
 
-import "google/protobuf/timestamp.proto";
 import "google/protobuf/wrappers.proto";
 
 // Событие обновления доктора.
@@ -21,6 +20,4 @@ message Doctor {
   google.protobuf.StringValue middle_name = 5;
   google.protobuf.StringValue last_name = 6;
   google.protobuf.StringValue profession_mis_id = 7;
-  google.protobuf.Timestamp created_at = 8;
-  google.protobuf.Timestamp updated_at = 9;
 }

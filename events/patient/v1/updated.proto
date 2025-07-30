@@ -27,8 +27,6 @@ message Patient {
   google.protobuf.BoolValue refuse_sms = 12;
   google.protobuf.BoolValue refuse_email = 13;
   google.protobuf.BoolValue refuse_messengers = 14;
-  google.protobuf.Timestamp created_at = 15;
-  google.protobuf.Timestamp updated_at = 16;
 }
 
 // Перечисление пола.

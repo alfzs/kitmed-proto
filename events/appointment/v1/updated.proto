@@ -29,8 +29,6 @@ message Appointment {
   google.protobuf.StringValue source = 12;
   bool is_first = 13;
   repeated Procedure procedures = 14;
-  google.protobuf.Timestamp created_at = 15;
-  google.protobuf.Timestamp updated_at = 16;
 }
 
 // Procedure представляет процедуру, связанную с записью.
