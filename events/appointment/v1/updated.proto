@@ -21,15 +21,16 @@ message Appointment {
   google.protobuf.StringValue clinic_mis_id = 4;
   google.protobuf.StringValue doctor_mis_id = 5;
   google.protobuf.StringValue patient_mis_id = 6;
-  google.protobuf.Timestamp scheduled_time = 7;
-  google.protobuf.Duration duration = 8;
-  Status status = 9;
-  Mode mode = 10;
-  google.protobuf.StringValue source = 11;
-  bool is_first = 12;
-  repeated Procedure procedures = 13;
-  google.protobuf.Timestamp created_at = 14;
-  google.protobuf.Timestamp updated_at = 15;
+  google.protobuf.Timestamp registered_time = 7;
+  google.protobuf.Timestamp scheduled_time = 8;
+  google.protobuf.Duration duration = 9;
+  Status status = 10;
+  Mode mode = 11;
+  google.protobuf.StringValue source = 12;
+  bool is_first = 13;
+  repeated Procedure procedures = 14;
+  google.protobuf.Timestamp created_at = 15;
+  google.protobuf.Timestamp updated_at = 16;
 }
 
 // Procedure представляет процедуру, связанную с записью.
