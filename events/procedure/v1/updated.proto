@@ -17,6 +17,6 @@ message Procedure {
   google.protobuf.StringValue mis_id = 3;
   google.protobuf.StringValue code = 4;
   google.protobuf.StringValue name = 5;
-  google.protobuf.StringValue price = 6;
+  google.protobuf.Int32Value price = 6;
   google.protobuf.StringValue profession_mis_id = 7;
 }
